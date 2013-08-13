@@ -535,13 +535,13 @@
     
     refreshing_ = YES;
     
-// 这样 会导致 scrollView 被拖动时，timer 事件停止，且第一次执行时会卡住直到 scrollViewDidEndDecelerating
-//            timer_ =
-//            [NSTimer scheduledTimerWithTimeInterval:0.01
-//                                             target:self
-//                                           selector:@selector(refreshMethod:)
-//                                           userInfo:nil
-//                                            repeats:YES];
+    //这样 会导致 scrollView 被拖动时，timer 事件停止，且第一次执行时会卡住直到 scrollViewDidEndDecelerating
+//    timer_ = [NSTimer scheduledTimerWithTimeInterval:0.01
+//                                              target:self
+//                                            selector:@selector(refreshMethod:)
+//                                            userInfo:nil
+//                                             repeats:YES];
+    
     
     timer_ = [NSTimer timerWithTimeInterval:0.01
                                      target:self
