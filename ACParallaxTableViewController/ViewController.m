@@ -8,11 +8,37 @@
 
 #import "ViewController.h"
 
+#import "ACParallaxTableViewController.h"
+
+
 @interface ViewController ()
 
 @end
 
+
 @implementation ViewController
+
+- (IBAction)goBtnPressed:(id)sender
+{
+    // Creat VC
+    UIImage *topImage = [UIImage imageNamed:@"cover_02"];
+    ACParallaxTableViewController *nextVC = [[ACParallaxTableViewController alloc] initWithImage:topImage];
+    
+    // Modal
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:nextVC];
+    
+
+    UIImage *navBarBgImg = [IMAGE(@"nav_bar", @"png") stretchableImageWithLeftCapWidth:5.f topCapHeight:22.f];
+    [nc.navigationBar setBackgroundImage:navBarBgImg forBarMetrics:UIBarMetricsDefault];
+    
+    nc.navigationBar.tintColor = [UIColor  blackColor];
+    nc.navigationBar.translucent = YES;
+//    nc.navigationBar.alpha = 0.5f;
+    
+    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentViewController:nc animated:YES completion:nil];
+}
 
 - (void)viewDidLoad
 {
