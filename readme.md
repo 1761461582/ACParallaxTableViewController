@@ -1,5 +1,4 @@
 # ACParallaxTableViewController
---------------------
 
 练习Demo。
 
